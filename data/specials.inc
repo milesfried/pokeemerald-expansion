@@ -2,11 +2,50 @@
 .if ALLOCATE_SPECIAL_TABLE
 	.global SPECIAL_\ptr
 	.set SPECIAL_\ptr, __special__
+#if WINSTONS_BURROW_SLICE
+	.set __burrow_keep_special, 0
+	.ifc "\ptr", "HealPlayerParty"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "ChangePokemonNickname"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "GetBattleOutcome"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "PlayerFaceTrainerAfterBattle"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "TryPrepareSecondApproachingTrainer"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "CalculatePlayerPartyCount"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "CountPartyNonEggMons"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "CountPartyAliveNonEggMons"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "CountPartyAliveNonEggMons_IgnoreVar0x8004Slot"
+		.set __burrow_keep_special, 1
+	.endif
+	.ifc "\ptr", "HasEnoughMonsForDoubleBattle"
+		.set __burrow_keep_special, 1
+	.endif
+	.if __burrow_keep_special
+		.4byte \ptr
+	.else
+		.4byte BurrowDisabledSpecial
+	.endif
+#else
 	.if \requests_effects == 0
 		.4byte \ptr
 	.else
 		.4byte \ptr + ROM_SIZE
 	.endif
+#endif
 .endif
 .set SPECIAL_WAITSTATE_\ptr, \waitstate
 .set __special__, __special__ + 1

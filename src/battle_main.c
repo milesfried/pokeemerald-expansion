@@ -4740,6 +4740,10 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
 
     priority = GetMovePriority(move);
 
+    // Tunnel Ambush is a normal-priority attack unless sandstorm lets it strike first.
+    if (move == MOVE_TUNNEL_AMBUSH && (GetWeather() & B_WEATHER_SANDSTORM))
+        priority++;
+
     // Max Guard check
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
         return GetMovePriority(MOVE_MAX_GUARD);

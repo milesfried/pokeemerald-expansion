@@ -52,7 +52,7 @@
 #define VAR_RECYCLE_GOODS                                0x4020
 #define VAR_REPEL_STEP_COUNT                             0x4021
 #define VAR_ICE_STEP_COUNT                               0x4022
-#define VAR_STARTER_MON                                  0x4023 // 0=Treecko, 1=Torchic, 2=Mudkip
+#define VAR_STARTER_MON                                  0x4023 // 0=Growlithe, 1=Electrike, 2=Greavard
 #define VAR_MIRAGE_RND_H                                 0x4024
 #define VAR_MIRAGE_RND_L                                 0x4025
 #define VAR_SECRET_BASE_MAP                              0x4026
@@ -238,8 +238,8 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE                     0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE                         0x40DA
-#define VAR_UNUSED_0x40DB                                0x40DB // Unused Var
-#define VAR_UNUSED_0x40DC                                0x40DC // Unused Var
+#define VAR_WINSTONS_BURROW_FLOOR                        0x40DB // Winston's Burrow v0.1: current floor, 1-10.
+#define VAR_WINSTONS_BURROW_STATE                        0x40DC // Winston's Burrow v0.1: 0 = active trigger, 1 = run cleared.
 #define VAR_GIFT_PICHU_SLOT                              0x40DD
 #define VAR_GIFT_UNUSED_1                                0x40DE // Var is written to, but never read
 #define VAR_GIFT_UNUSED_2                                0x40DF // Var is written to, but never read
@@ -248,7 +248,7 @@
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
+#define VAR_WINSTONS_BURROW_TRAINERS                     0x40E5 // Required trainers defeated on the current Burrow floor.
 #define VAR_DAILY_SLOTS                                  0x40E6
 #define VAR_DAILY_WILDS                                  0x40E7
 #define VAR_DAILY_BLENDER                                0x40E8
@@ -266,7 +266,7 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER                    0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
-#define VAR_UNUSED_0x40F7                                0x40F7 // Unused Var
+#define VAR_WINSTONS_BURROW_PENDING_CAVE_IN              0x40F7 // Set before warping into Rusturf Tunnel to play the entrance cave-in.
 #define VAR_UNUSED_0x40F8                                0x40F8 // Unused Var
 #define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
 #define VAR_UNUSED_0x40FA                                0x40FA // Unused Var

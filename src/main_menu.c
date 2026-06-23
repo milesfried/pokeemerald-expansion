@@ -124,6 +124,11 @@
  * Task_NewGameBirchSpeech_SlidePlatformAway
  * Task_NewGameBirchSpeech_StartPlayerFadeIn
  * Task_NewGameBirchSpeech_WaitForPlayerFadeIn
+ *  - Sets the player to the fixed Miles profile and advances to
+ *    Task_NewGameBirchSpeech_SlidePlatformAway2.
+ *
+ * The vanilla gender and name tasks are still present below, but the current
+ * Winston's Burrow intro does not route through them.
  * Task_NewGameBirchSpeech_BoyOrGirl
  * Task_NewGameBirchSpeech_WaitToShowGenderMenu
  * Task_NewGameBirchSpeech_ChooseGender
@@ -229,6 +234,7 @@ static void CB2_NewGameBirchSpeech_ReturnFromNamingScreen(void);
 static void Task_NewGameBirchSpeech_CreateNameYesNo(u8);
 static void Task_NewGameBirchSpeech_ProcessNameYesNoMenu(u8);
 void CreateYesNoMenuParameterized(u8, u8, u16, u16, u8, u8);
+static void NewGameBirchSpeech_SetFixedPlayerIdentity(void);
 static void Task_NewGameBirchSpeech_SlidePlatformAway2(u8);
 static void Task_NewGameBirchSpeech_ReshowBirchLotad(u8);
 static void Task_NewGameBirchSpeech_WaitForSpriteFadeInAndTextPrinter(u8);
@@ -1509,7 +1515,11 @@ static void Task_NewGameBirchSpeech_WaitForPlayerFadeIn(u8 taskId)
     if (gTasks[taskId].tIsDoneFadingSprites)
     {
         gSprites[gTasks[taskId].tPlayerSpriteId].oam.objMode = ST_OAM_OBJ_NORMAL;
-        gTasks[taskId].func = Task_NewGameBirchSpeech_BoyOrGirl;
+        NewGameBirchSpeech_SetFixedPlayerIdentity();
+        gSprites[gTasks[taskId].tPlayerSpriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+        NewGameBirchSpeech_StartFadeOutTarget1InTarget2(taskId, 2);
+        NewGameBirchSpeech_StartFadePlatformIn(taskId, 1);
+        gTasks[taskId].func = Task_NewGameBirchSpeech_SlidePlatformAway2;
     }
 }
 
@@ -1673,6 +1683,14 @@ static void Task_NewGameBirchSpeech_ProcessNameYesNoMenu(u8 taskId)
         PlaySE(SE_SELECT);
         gTasks[taskId].func = Task_NewGameBirchSpeech_BoyOrGirl;
     }
+}
+
+static void NewGameBirchSpeech_SetFixedPlayerIdentity(void)
+{
+    static const u8 sPlayerName[] = _("Miles");
+
+    gSaveBlock2Ptr->playerGender = MALE;
+    StringCopy_PlayerName(gSaveBlock2Ptr->playerName, sPlayerName);
 }
 
 static void Task_NewGameBirchSpeech_SlidePlatformAway2(u8 taskId)

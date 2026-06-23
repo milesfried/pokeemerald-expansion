@@ -27500,6 +27500,15 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_PECHARUNT
 
+    const u32 gMonFrontPic_Winsterrier[] = INCGFX_U32("graphics/pokemon/winsterrier/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_Winsterrier[] = INCGFX_U16("graphics/pokemon/winsterrier/normal.pal", ".gbapal");
+    const u32 gMonBackPic_Winsterrier[] = INCGFX_U32("graphics/pokemon/winsterrier/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Winsterrier[] = INCGFX_U16("graphics/pokemon/winsterrier/shiny.pal", ".gbapal");
+    const u8 gMonIcon_Winsterrier[] = INCGFX_U8("graphics/pokemon/winsterrier/icon.png", ".4bpp");
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Winsterrier[] = INCGFX_U8("graphics/pokemon/winsterrier/footprint.png", ".1bpp");
+#endif //P_FOOTPRINTS
+
     const u32 gMonFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/anim_front.png", ".4bpp.smol");
     const u16 gMonPalette_Egg[] = INCGFX_U16("graphics/pokemon/egg/normal.pal", ".gbapal");
     const u8 gMonIcon_Egg[] = INCGFX_U8("graphics/pokemon/egg/icon.png", ".4bpp");

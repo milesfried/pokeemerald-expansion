@@ -5,6 +5,55 @@ VerdanturfTown_MapScripts::
 VerdanturfTown_OnTransition:
 	setflag FLAG_VISITED_VERDANTURF_TOWN
 	setvar VAR_CONTEST_HALL_STATE, 0
+	setvar VAR_WINSTONS_BURROW_PENDING_CAVE_IN, 0
+	end
+
+VerdanturfTown_EventScript_ArmBurrowCaveIn::
+	lockall
+	setvar VAR_WINSTONS_BURROW_FLOOR, 1
+	setvar VAR_WINSTONS_BURROW_STATE, 0
+	setvar VAR_WINSTONS_BURROW_TRAINERS, 0
+	setvar VAR_WINSTONS_BURROW_PENDING_CAVE_IN, 0
+	goto_if_set FLAG_SYS_POKEMON_GET, VerdanturfTown_EventScript_BurrowReady
+	msgbox RusturfTunnel_Text_BurrowWelcome, MSGBOX_DEFAULT
+	setflag FLAG_SYS_POKEMON_GET
+	msgbox RusturfTunnel_Text_ChoosePartner, MSGBOX_DEFAULT
+	multichoice 0, 0, MULTI_BURROW_STARTER, FALSE
+	switch VAR_RESULT
+	case 0, VerdanturfTown_EventScript_GiveGrowlithe
+	case 1, VerdanturfTown_EventScript_GiveElectrike
+	case 2, VerdanturfTown_EventScript_GiveGreavard
+	goto VerdanturfTown_EventScript_GiveGrowlithe
+
+VerdanturfTown_EventScript_GiveGrowlithe::
+	setvar VAR_STARTER_MON, 0
+	bufferspeciesname STR_VAR_1, SPECIES_GROWLITHE
+	givemon SPECIES_GROWLITHE, 5
+	goto VerdanturfTown_EventScript_AfterPartnerChosen
+
+VerdanturfTown_EventScript_GiveElectrike::
+	setvar VAR_STARTER_MON, 1
+	bufferspeciesname STR_VAR_1, SPECIES_ELECTRIKE
+	givemon SPECIES_ELECTRIKE, 5
+	goto VerdanturfTown_EventScript_AfterPartnerChosen
+
+VerdanturfTown_EventScript_GiveGreavard::
+	setvar VAR_STARTER_MON, 2
+	bufferspeciesname STR_VAR_1, SPECIES_GREAVARD
+	givemon SPECIES_GREAVARD, 5
+	goto VerdanturfTown_EventScript_AfterPartnerChosen
+
+VerdanturfTown_EventScript_AfterPartnerChosen::
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VerdanturfTown_EventScript_BurrowReady
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto VerdanturfTown_EventScript_BurrowReady
+
+VerdanturfTown_EventScript_BurrowReady::
+	special HealPlayerParty
+	msgbox RusturfTunnel_Text_BurrowPartnerReady, MSGBOX_DEFAULT
+	releaseall
 	end
 
 VerdanturfTown_EventScript_Twin::
@@ -122,4 +171,3 @@ VerdanturfTown_Text_RusturfTunnelSign:
 	.string "“Linking RUSTBORO and VERDANTURF\p"
 	.string "“The tunnel project has been\n"
 	.string "canceled.”$"
-

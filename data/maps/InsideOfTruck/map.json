@@ -58,56 +58,34 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-    {
-      "x": 4,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
-    },
-    {
-      "x": 4,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
-    },
-    {
-      "x": 4,
-      "y": 3,
-      "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
-      "dest_warp_id": "WARP_ID_DYNAMIC"
-    }
-  ],
+  "warp_events": [],
   "coord_events": [
     {
       "type": "trigger",
       "x": 3,
       "y": 1,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var": "VAR_WINSTONS_BURROW_STATE",
       "var_value": "0",
-      "script": "InsideOfTruck_EventScript_SetIntroFlags"
+      "script": "InsideOfTruck_EventScript_StartBurrow"
     },
     {
       "type": "trigger",
       "x": 3,
       "y": 2,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var": "VAR_WINSTONS_BURROW_STATE",
       "var_value": "0",
-      "script": "InsideOfTruck_EventScript_SetIntroFlags"
+      "script": "InsideOfTruck_EventScript_StartBurrow"
     },
     {
       "type": "trigger",
       "x": 3,
       "y": 3,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_INTRO_STATE",
+      "var": "VAR_WINSTONS_BURROW_STATE",
       "var_value": "0",
-      "script": "InsideOfTruck_EventScript_SetIntroFlags"
+      "script": "InsideOfTruck_EventScript_StartBurrow"
     }
   ],
   "bg_events": [

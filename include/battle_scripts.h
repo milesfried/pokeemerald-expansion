@@ -414,6 +414,8 @@ extern const u8 BattleScript_CostarActivates[];
 extern const u8 BattleScript_ZeroToHeroActivates[];
 extern const u8 BattleScript_CommanderActivates[];
 extern const u8 BattleScript_HospitalityActivates[];
+extern const u8 BattleScript_TunnelGuideSetStealthRock[];
+extern const u8 BattleScript_TunnelGuideHeal[];
 extern const u8 BattleScript_ToxicDebrisActivates[];
 extern const u8 BattleScript_EarthEaterActivates[];
 extern const u8 BattleScript_MimicryActivates[];

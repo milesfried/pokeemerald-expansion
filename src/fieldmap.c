@@ -14,6 +14,7 @@
 #include "secret_base.h"
 #include "trainer_hill.h"
 #include "tv.h"
+#include "winstons_burrow.h"
 #include "constants/rgb.h"
 #include "constants/layouts.h"
 #include "constants/metatile_behaviors.h"
@@ -135,6 +136,7 @@ const struct MapHeader *const GetMapHeaderFromConnection(const struct MapConnect
 void InitMap(void)
 {
     InitMapLayoutData(&gMapHeader);
+    TryGenerateWinstonsBurrowMap();
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     RunOnLoadMapScript();
 }
@@ -145,6 +147,7 @@ void InitMapFromSavedGame(void)
     InitSecretBaseAppearance(FALSE);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     LoadSavedMapView();
+    TryGenerateWinstonsBurrowMap();
     RunOnLoadMapScript();
     UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
 }

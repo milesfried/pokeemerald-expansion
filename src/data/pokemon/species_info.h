@@ -176,6 +176,59 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     /* You may add any custom species below this point based on the following structure: */
 
+    [SPECIES_WINSTERRIER] =
+    {
+        .baseHP        = 100,
+        .baseAttack    = 125,
+        .baseDefense   = 105,
+        .baseSpeed     = 100,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 110,
+        .types = MON_TYPES(TYPE_GROUND, TYPE_DARK),
+        .catchRate = 45,
+        .expYield = 270,
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_TUNNEL_GUIDE, ABILITY_NONE, ABILITY_TUNNEL_GUIDE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("Winsterrier"),
+        .cryId = CRY_POOCHYENA,
+        .natDexNum = NATIONAL_DEX_NONE,
+        .categoryName = _("Burrow Guard"),
+        .height = 4,
+        .weight = 145,
+        .description = COMPOUND_STRING(
+            "Winsterrier patrols forgotten\n"
+            "tunnels beneath Verdanturf Town.\n"
+            "Its lantern shines before cave-ins\n"
+            "and guides lost miners to safety."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Winsterrier,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 4,
+        .frontAnimFrames = sAnims_TwoFramePlaceHolder,
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Winsterrier,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 8,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Winsterrier,
+        .shinyPalette = gMonShinyPalette_Winsterrier,
+        .iconSprite = gMonIcon_Winsterrier,
+        .iconPalIndex = 1,
+        FOOTPRINT(Winsterrier)
+        .levelUpLearnset = sNoneLevelUpLearnset,
+        .teachableLearnset = sNoneTeachableLearnset,
+        .eggMoveLearnset = sNoneEggMoveLearnset,
+    },
+
     /*
     [SPECIES_NONE] =
     {

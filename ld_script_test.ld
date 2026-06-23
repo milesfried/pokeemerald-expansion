@@ -26,8 +26,8 @@ SECTIONS {
     .ewram.sbss (NOLOAD) :
     ALIGN(4)
     {
-        src/*.o(.sbss);
-        test/*.o(.sbss);
+        src/*.o(.sbss*);
+        test/*.o(.sbss*);
         . = ALIGN(4);
     } > EWRAM
 
@@ -43,9 +43,9 @@ SECTIONS {
     .iwram.bss (NOLOAD) :
     ALIGN(4)
     {
-        src/*.o(.bss);
-        data/*.o(.bss);
-        test/*.o(.bss);
+        src/*.o(.bss*);
+        data/*.o(.bss*);
+        test/*.o(.bss*);
         *libc.a:*.o(.bss*);
         *libgcc.a:*.o(.bss*);
         *libnosys.a:*.o(.bss*);
@@ -78,7 +78,7 @@ SECTIONS {
         KEEP(*.o(.text.header_gf));
         KEEP(*.o(.text.header_rhh));
         KEEP(*.o(.text.consts));
-        src/*.o(.text);
+        src/*.o(.text*);
     } > ROM =0
 
     script_data :
@@ -145,7 +145,7 @@ SECTIONS {
         test/test_test_runner.o(.tests); /* Sanity checks first. */
         test/*.o(.tests);
         __stop_tests = .;
-        test/*.o(.text);
+        test/*.o(.text*);
         test/*.o(.rodata*);
     } > ROM =0
 

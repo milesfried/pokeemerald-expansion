@@ -2612,17 +2612,21 @@ Class: Rich Boy
 Pic: Rich Boy
 Gender: Male
 Music: Rich
-Items: Full Restore
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint
 
-Linoone @ Nugget
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Fury Swipes
-- Mud Sport
-- Odor Sleuth
-- Sand Attack
+Silicobra
+Level: 12
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+SPECIES_WINSTERRIER
+Level: 13
+Ability: ABILITY_TUNNEL_GUIDE
+IVs: 5 HP / 5 Atk / 5 Def / 5 SpA / 5 SpD / 5 Spe
+- MOVE_TACKLE
+- MOVE_MUD_SLAP
+- MOVE_SAND_ATTACK
+- MOVE_SNARL
 
 === TRAINER_STEVE_1 ===
 Name: STEVE
@@ -16831,49 +16835,147 @@ Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_RED ===
-Name: RED
-Class: Rival
-Pic: Red
+Name: BURROW 1
+Class: Hiker
+Pic: Hiker
 Gender: Male
-Music: Male
+Music: Hiker
 Double Battle: No
+AI: Check Bad Move
 
-Charmander
-Level: 5
+Geodude
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LEAF ===
-Name: LEAF
-Class: Rival
-Pic: Leaf
+Name: BURROW 2
+Class: Picnicker
+Pic: Picnicker
 Gender: Female
-Music: Male
+Music: Female
 Double Battle: No
+AI: Check Bad Move
 
-Bulbasaur
+Poochyena
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_PLACEHOLDER ===
-Name: BRENDAN
-Class: RS Protag
-Pic: RS Brendan
+Name: BURROW 3
+Class: Ruin Maniac
+Pic: Ruin Maniac
 Gender: Male
 Music: Male
 Double Battle: No
+AI: Check Bad Move
 
-Groudon
+Sandshrew
+Level: 6
+IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+Zubat
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_PLACEHOLDER ===
-Name: MAY
-Class: RS Protag
-Pic: RS May
+Name: BURROW 4
+Class: Aroma Lady
+Pic: Aroma Lady
 Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Numel
+Level: 7
+IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+/*
+Winston's Burrow v0.1 adds five trainers here and reuses existing late-game
+placeholder trainers for floors 1-4 so the trainer flag space stays small.
+*/
+
+=== TRAINER_BURROW_FLOOR_5 ===
+Name: BURROW 5
+Class: Camper
+Pic: Camper
+Gender: Male
 Music: Male
 Double Battle: No
+AI: Check Bad Move
 
-Kyogre
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cacnea
+Level: 9
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+Aron
+Level: 8
+IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+
+=== TRAINER_BURROW_FLOOR_6 ===
+Name: BURROW 6
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Baltoy
+Level: 10
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+Makuhita
+Level: 10
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+
+=== TRAINER_BURROW_FLOOR_7 ===
+Name: BURROW 7
+Class: Cooltrainer
+Pic: Cooltrainer M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Dwebble
+Level: 11
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+Trapinch
+Level: 11
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+=== TRAINER_BURROW_FLOOR_8 ===
+Name: BURROW 8
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move
+
+Numel
+Level: 12
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+Shroomish
+Level: 12
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+=== TRAINER_BURROW_FLOOR_9 ===
+Name: BURROW 9
+Class: Dragon Tamer
+Pic: Dragon Tamer
+Gender: Male
+Music: Intense
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+
+Roggenrola
+Level: 13
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+
+Sandygast
+Level: 13
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe

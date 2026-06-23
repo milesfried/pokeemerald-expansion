@@ -4709,6 +4709,23 @@ BattleScript_HospitalityActivates::
 	datahpupdate BS_EFFECT_BATTLER, PASSIVE_HP_UPDATE
 	return
 
+BattleScript_TunnelGuideSetStealthRock::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TUNNELGUIDESETSTEALTHROCK
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_TunnelGuideHeal::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TUNNELGUIDEHEALED
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_EFFECT_BATTLER, B_ANIM_SIMPLE_HEAL
+	healthbarupdate BS_EFFECT_BATTLER, PASSIVE_HP_UPDATE
+	datahpupdate BS_EFFECT_BATTLER, PASSIVE_HP_UPDATE
+	return
+
 BattleScript_AttackWeakenedByStrongWinds::
 	pause B_WAIT_TIME_SHORT
 	printstring STRINGID_ATTACKWEAKENEDBSTRONGWINDS

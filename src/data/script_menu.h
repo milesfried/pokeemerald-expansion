@@ -1122,6 +1122,13 @@ static const struct MenuAction sMultichoiceList_HOF_Eggs_Victories_Quit[] = {
     {gText_ShopQuit}
 };
 
+static const struct MenuAction sMultichoiceList_BurrowStarter[] =
+{
+    {COMPOUND_STRING("GROWLITHE")},
+    {COMPOUND_STRING("ELECTRIKE")},
+    {COMPOUND_STRING("GREAVARD")},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -1294,6 +1301,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_HOF_VICTORIES_QUIT]                         = MULTICHOICE(sMultichoiceList_HOF_Victories_Quit),
     [MULTI_EGGS_VICTORIES_QUIT]                        = MULTICHOICE(sMultichoiceList_Eggs_Victories_Quit),
     [MULTI_HOF_EGGS_VICTORIES_QUIT]                    = MULTICHOICE(sMultichoiceList_HOF_Eggs_Victories_Quit),
+    [MULTI_BURROW_STARTER]                             = MULTICHOICE(sMultichoiceList_BurrowStarter),
 };
 
 const u8 *const gStdStrings[] =

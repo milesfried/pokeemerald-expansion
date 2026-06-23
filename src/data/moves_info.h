@@ -23655,4 +23655,21 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .ignoresProtect = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxRapidFlow,
     },
+
+    [MOVE_TUNNEL_AMBUSH] =
+    {
+        .name = COMPOUND_STRING("Tunnel Ambush"),
+        .description = COMPOUND_STRING(
+            "An ambush that strikes\n"
+            "first in a sandstorm."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
+        .pp = 10,
+        .target = TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_Dig,
+    },
 };

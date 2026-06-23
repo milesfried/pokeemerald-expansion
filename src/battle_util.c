@@ -4671,6 +4671,30 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 effect++;
             }
             break;
+        case ABILITY_TUNNEL_GUIDE:
+            if (shouldAbilityTrigger)
+            {
+                enum BattleSide targetSide = GetBattlerSide(battler) == B_SIDE_PLAYER ? B_SIDE_OPPONENT : B_SIDE_PLAYER;
+
+                // Tunnel Guide either prepares the enemy side for the descent or recovers when the route is already marked.
+                gEffectBattler = gBattlerAbility = gBattleScripting.battler = battler;
+                gBattlerTarget = GetFirstBattlerOnSide(targetSide);
+
+                if (!IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK))
+                {
+                    PushHazardTypeToQueue(targetSide, HAZARDS_STEALTH_ROCK);
+                    BattleScriptCall(BattleScript_TunnelGuideSetStealthRock);
+                    effect++;
+                }
+                else if (!gBattleMons[battler].volatiles.healBlock
+                      && gBattleMons[battler].hp < gBattleMons[battler].maxHP)
+                {
+                    SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 4);
+                    BattleScriptCall(BattleScript_TunnelGuideHeal);
+                    effect++;
+                }
+            }
+            break;
         case ABILITY_COSTAR:
             if (shouldAbilityTrigger
              && IsDoubleBattle()
